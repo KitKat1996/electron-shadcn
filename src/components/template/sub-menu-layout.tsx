@@ -1,5 +1,6 @@
 import { cn } from "@/utils/tailwind";
-import React, { useState } from "react";
+import React from "react";
+import { useSubMenu } from "@/contexts/SubMenuContext";
 
 type SubMenuLayoutProps = {
   children: React.ReactNode;
@@ -12,11 +13,11 @@ export default function SubMenuLayout({
   children,
   sideMenu,
 }: SubMenuLayoutProps) {
-  const [isOpen, setOpen] = useState(true);
+  const { isOpen } = useSubMenu();
   const visible = isOpen ? "w-full" : "w-[0px] overflow-hidden";
 
   return (
-    <div className="inline-flex w-full h-full">
+    <div className="inline-flex w-full h-full ">
       <div className={cn(`flex max-w-[260px] transition-all h-full`, visible)}>
         {sideMenu}
       </div>

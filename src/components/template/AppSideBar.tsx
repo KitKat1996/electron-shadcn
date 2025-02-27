@@ -55,10 +55,10 @@ export function AppSidebar() {
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (
-                <SidebarMenuItem key={item.title}>
+                <SidebarMenuItem key={item.title} >
                   <SidebarMenuButton asChild  >
-                    <Link to={item.url}>
-                      <item.icon style={{ width: '22px', height: '22px' , strokeWidth: 1.2}}/>
+                    <Link to={item.url} >
+                      <item.icon style={{ width: '22px', height: '22px' , strokeWidth: 1.2 , position : 'relative' , left : "-3px"}}/>
                       <span>{item.title}</span>
                     </Link>
                   </SidebarMenuButton>
